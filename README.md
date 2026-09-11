@@ -17,7 +17,9 @@ coachtech 勤怠管理アプリ
 - Laravel Fortify（認証）
 - phpMyAdmin
 - mailpit
+- Laravel sanctum
 - package.jsonに準ずる
+
 
 ## ER図
 
@@ -89,7 +91,7 @@ http://localhost
 1. **リポジトリをクローン**
 
     ```bash
-    git clone https://github.com/coachtech-material/ExampleAnswer-ConfirmationTest-ContactForm.git
+    git clone https://github.com/cactus777cheshire55/attendance-app
     ```
 
 2. **.envファイルの準備**
@@ -109,6 +111,10 @@ http://localhost
     DB_DATABASE=laravel
     DB_USERNAME=sail
     DB_PASSWORD=password
+
+    MAIL_MAILER=smtp
+    MAIL_HOST=mailpit
+    MAIL_PORT=1025
     ```
 
 3. **Composer依存パッケージのインストール**
@@ -188,7 +194,6 @@ http://localhost
 
     ```bash
     sail npm install
-    sail npm install alpinejs
     sail npm run dev
     ```
 
@@ -210,23 +215,16 @@ sail artisan test
 sail artisan test --coverage
 ```
 
-## 機能一覧
+## apiテスト実行時のpost(put,patch)メソッド実行時
 
-- ユーザー認証（登録、ログイン、ログアウト）
-- お問い合わせ登録・一覧取得・検索・単体取得
-- お問い合わせ詳細表示・削除
-- CSVエクスポート
-- タグ管理（追加・更新・削除）
-- 公開API（お問い合わせCRUD）
+ポストマンでURLに http://localhost/api/v1/login
+Body タブにrawにしてタイプを JSON に設定し
+{
+    "email": "user3@example.com",
+    "password": "password"
+}
+で送信してtokenを出してからAuthorizationタブのauth typeをBearer Tokenにしてtokenに張り付ける
 
-## APIエンドポイント一覧
+*ポストマン以外の挙動はわからないので,その場合は未実装ということでお願いします
 
-認証不要の公開APIです。全エンドポイントは `/api/v1` プレフィックス配下に定義されています。
-
-| HTTPメソッド | URI | 概要 |
-|---|---|---|
-| GET | /api/v1/contacts | お問い合わせ一覧（検索・ページネーション付き） |
-| GET | /api/v1/contacts/{contact} | お問い合わせ詳細（カテゴリ・タグ含む） |
-| POST | /api/v1/contacts | お問い合わせ新規作成 |
-| PUT | /api/v1/contacts/{contact} | お問い合わせ更新 |
-| DELETE | /api/v1/contacts/{contact} | お問い合わせ削除 |
+*mailに関しても,自動送信後のメール 認証メールを再送するをタップして,メールを送るようにしているのでformタグaタグに変えているので,主旨に沿わないのであれば未実装ということでお願いします
