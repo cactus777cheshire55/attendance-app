@@ -227,3 +227,8 @@ Body タブをrawにしてタイプを JSON に設定し
 で送信してtokenを出してからAuthorizationタブのauth typeをBearer Tokenにしてtokenに張り付ける
 
 *mailに関して,自動送信後のメール 認証メールを再送するをタップして,メールを送るようにしているのでformタグをaタグに変えています.ﾙｰﾃｨﾝｸﾞ未実装
+
+*テーブル仕様書
+https://docs.google.com/spreadsheets/d/1x0JIKbG_TWviYZT_TZ6Rm8ciYkTJQzMYytRlhfTZ3S4/edit?usp=sharing
+ターム内容
+https://docs.google.com/spreadsheets/d/1x0JIKbG_TWviYZT_TZ6Rm8ciYkTJQzMYytRlhfTZ3S4/edit?gid=1113232830#gid=1113232830
