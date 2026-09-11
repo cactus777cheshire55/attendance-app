@@ -218,7 +218,8 @@ sail artisan test --coverage
 ## apiテスト実行時のpost(put,patch)メソッド実行時
 
 ポストマンでURLに http://localhost/api/v1/login
-Body タブにrawにしてタイプを JSON に設定し
+getﾒｿｯﾄﾞ
+Body タブをrawにしてタイプを JSON に設定し
 {
     "email": "user3@example.com",
     "password": "password"
